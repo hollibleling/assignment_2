@@ -19,10 +19,14 @@ from rest_framework import routers
 from rest_framework_nested.routers import NestedSimpleRouter
 
 from products.views import ProductViewSet
+from users.views import UserViewSet
 
 router = routers.SimpleRouter(trailing_slash=False)
 router.register('product', ProductViewSet, basename='product')
 product = NestedSimpleRouter(router, 'product', lookup='product')
+router.register('user', UserViewSet, basename='user')
+# product.register('item', ItemViewSet, basename='item')
+# product.register('tag', TagViewSet, basename='tag')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
