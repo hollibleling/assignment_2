@@ -23,14 +23,14 @@ from rest_framework_simplejwt.views import (
 )
 
 from users.views import UserViewSet
-from products.views import ProductViewSet, ItemViewSet, TagViewSet
+# from products.views import ProductViewSet, ItemViewSet, TagViewSet
 
 router = routers.SimpleRouter(trailing_slash=False)
 router.register('user', UserViewSet, basename='user')
-router.register('product', ProductViewSet, basename='product')
-product = NestedSimpleRouter(router, 'product', lookup='product')
-product.register('item', ItemViewSet, basename='item')
-product.register('tag', TagViewSet, basename='tag')
+# router.register('product', ProductViewSet, basename='product')
+# product = NestedSimpleRouter(router, 'product', lookup='product')
+# product.register('item', ItemViewSet, basename='item')
+# product.register('tag', TagViewSet, basename='tag')
 
 
 urlpatterns = [
@@ -38,5 +38,5 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('', include(router.urls)),
-    path('', include(product.urls)),
+    # path('', include(product.urls)),
 ]
