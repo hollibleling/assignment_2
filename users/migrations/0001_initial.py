@@ -2,6 +2,16 @@
 
 from django.db import migrations, models
 import users.models
+from django.contrib.auth.hashers import make_password
+
+
+def set_initial_user_data(apps, schema_editor):
+    User = apps.get_model("users", "User")
+    db_alias = schema_editor.connection.alias
+    User.objects.using(db_alias).bulk_create([
+        User(email="user@freshcode.me", role="user", password=make_password("user")),
+        User(email="admin@freshcode.me", role="admin", password=make_password("admin")),
+    ])
 
 
 class Migration(migrations.Migration):
@@ -28,4 +38,5 @@ class Migration(migrations.Migration):
                 ('objects', users.models.CustomUserManager()),
             ],
         ),
+        migrations.RunPython(set_initial_user_data),
     ]
