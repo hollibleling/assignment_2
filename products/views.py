@@ -1,8 +1,8 @@
 from rest_framework.viewsets import GenericViewSet
 from rest_framework.mixins import CreateModelMixin, ListModelMixin, RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin
 
-from .models import Menu, Item
-from .serializers import MenuSerializer, ItemSerializer
+from .models import Menu, Item, Tag
+from .serializers import MenuSerializer, ItemSerializer, TagSerializer
 from rest_framework import permissions
 
 from .permissions import CustomAuthenticated
@@ -27,6 +27,20 @@ class ItemViewSet(CreateModelMixin,
 
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
+    permission_classes = [CustomAuthenticated]
+
+    def create(self, request, *args, **kwargs):
+        request.data.setdefault('menu', kwargs['product_pk'])
+        return super().create(request, *args, **kwargs)
+
+
+class TagViewSet(CreateModelMixin,
+                 UpdateModelMixin,
+                 DestroyModelMixin,
+                 GenericViewSet):
+
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
     permission_classes = [CustomAuthenticated]
 
     def create(self, request, *args, **kwargs):
