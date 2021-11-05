@@ -50,6 +50,40 @@
 
 
 ## 폴더 구조
+```
+.
+├── README.md
+├── requirements.txt
+├── manage.py
+├── freshcode
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings
+│   ├── urls.py
+│   └── wsgi.py
+├── products
+│   ├── migrations
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── pagination.py
+│   ├── permissions.py
+│   ├── serializers.py
+│   ├── tests.py
+│   └── views.py
+└── users
+    ├── migrations
+    ├── __init__.py
+    ├── admin.py
+    ├── apps.py
+    ├── models.py
+    ├── permissions.py
+    ├── serializers.py
+    ├── tests.py
+    └── views.py
+
+```
 
 
 ## TIL정리 (Blog)
