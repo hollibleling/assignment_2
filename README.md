@@ -62,10 +62,10 @@
 ### 1. 전체 상품 조회
 - Method : GET
 - EndpointURL : /product
-- Remark : 
+- Remark : 페이징 포함(상품 5개 조회)
 - Request
 ```
-POST "http://127.0.0.1:8000/product HTTP/1.1"
+GET "http://127.0.0.1:8000/product HTTP/1.1"
 
 ```
 - Response
@@ -247,7 +247,7 @@ POST "http://127.0.0.1:8000/product HTTP/1.1"
 - Remark : 
 - Request
 ```
-POST "http://127.0.0.1:8000/product/1 HTTP/1.1"
+GET "http://127.0.0.1:8000/product/1 HTTP/1.1"
 
 ```
 - Response
@@ -256,6 +256,64 @@ POST "http://127.0.0.1:8000/product/1 HTTP/1.1"
     "id": 1,
     "category": "salad",
     "name": "깔깔마리 달래 샐러드",
+    "description": "해산물 샐러드",
+    "isSold": false,
+    "badge": "new",
+    "items": [
+        {
+            "id": 1,
+            "name": "스몰",
+            "size": "S",
+            "price": 7000,
+            "isSold": false,
+            "menuid": 1
+        },
+        {
+            "id": 2,
+            "name": "미디움",
+            "size": "M",
+            "price": 7500,
+            "isSold": false,
+            "menuid": 1
+        },
+        {
+            "id": 3,
+            "name": "라지",
+            "size": "L",
+            "price": 8000,
+            "isSold": false,
+            "menuid": 1
+        }
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "샐러드",
+            "type": "샐러드",
+            "menuid": 1
+        }
+    ]
+}
+```
+
+### 3. 개별 상품 수정
+- Method : PATCH
+- EndpointURL : /product / product_id
+- Remark : 
+- Request
+```
+PATCH "http://127.0.0.1:8000/product/1 HTTP/1.1"
+{
+    "name" : "깔깔마리 달래 샐러드(수정)"
+}
+
+```
+- Response
+```
+{
+    "id": 1,
+    "category": "salad",
+    "name": "깔깔마리 달래 샐러드(수정)",
     "description": "해산물 샐러드",
     "isSold": false,
     "badge": "new",
