@@ -52,6 +52,9 @@
 
 | Method | endpoint | Request Header | Request Body | Remark |
 |:------:|-------------|-----|------|--------|
+|POST|/user||      |회원가입|
+|POST|/api/token/||  |로그인|
+|POST|/product||   |상품 등록|
 |GET|/product||    |전체 상품 조회|
 |GET|/product/product_id||    |개별 상품 조회|
 |PATCH|/product/product_id||name|상품 수정|
