@@ -20,6 +20,6 @@ services:
         ports:
             - 8000:8000
         command: bash -c "
-                 python /root/fresh_code/manage.py migrate &&
-                 cd /root/fresh_code &&
+                 python /root/manage.py migrate &&
+                 cd /root &&
                  gunicorn -b 0.0.0.0:8000 fresh_code.wsgi:application"
