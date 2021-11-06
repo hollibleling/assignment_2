@@ -46,7 +46,17 @@
 
 ## API
 
-## 설치 및 실행 방법
+## 실행 방법(endpoint 호출방법)
+
+### ENDPOINT
+
+| Method | endpoint | Request Header | Request Body | Remark |
+|:------:|-------------|-----|------|--------|
+|GET|/product||    |전체 상품 조회|
+|GET|/product/product_id||    |개별 상품 조회|
+|PATCH|/product/product_id|name|상품 수정|
+|DELETE|/product/product_id|| 상품 삭제 |
+
 
 
 ## 폴더 구조
