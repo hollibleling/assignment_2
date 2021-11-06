@@ -12,7 +12,7 @@ class ItemSerializer(serializers.ModelSerializer):
         model  = Item
         fields = ['id', 'name', 'size', 'price', 'isSold', 'menu']
 
-    def validate(self, value):
+    def validate_size(self, value):
         if value not in [Item.L, Item.M, Item.S]:
             raise Exception("value Error")
 
