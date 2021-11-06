@@ -6,13 +6,13 @@
   - [wanted 채용공고 링크](https://www.wanted.co.kr/wd/34118)
 
 ## Members
-|이름   |github                   |담당 기능|
+|이름   |Github                   |Blog|
 |-------|-------------------------|--------------------|
 |이태성 |[yotae07](https://github.com/yotae07)     | 추가   |
 |임유선 |[YusunL](https://github.com/YusunL)   | 추가   |
-|윤현묵 |[fall031-muk](https://github.com/fall031-muk) | 추가   |
-|김정수 |[hollibleling](https://github.com/hollibleling) | 추가  |
-|최현수 |[filola](https://github.com/filola) | 추가 |
+|윤현묵 |[fall031-muk](https://github.com/fall031-muk) | https://velog.io/@fall031   |
+|김정수 |[hollibleling](https://github.com/hollibleling) | https://velog.io/@hollibleling  |
+|최현수 |[filola](https://github.com/filola) | https://velog.io/@chs_0303 |
 
 ## 과제 내용
 > 아래 요구사항에 맞춰 게시판 Restfull API를 개발합니다.
@@ -94,14 +94,6 @@
     └── views.py
 
 ```
-
-
-## TIL정리 (Blog)
-- 이태성 :
-- 임유선 :
-- 윤현묵 :
-- 김정수 :
-- 최현수 :
 
 # Reference
 이 프로젝트는 원티드x위코드 백엔드 프리온보딩 과제 일환으로 프레시코드에서 출제한 과제를 기반으로 만들었습니다.
