@@ -59,6 +59,13 @@
 |GET|/product/product_id|bearer token|    |개별 상품 조회|
 |PATCH|/product/product_id|bearer token|category, name, description, isSold, badge|상품 수정|
 |DELETE|/product/product_id|bearer token|| 상품 삭제 |
+|POST|/product/product_id/item|bearer token|name, size, price, isSold, menuid|상품 아이템 등록|
+|PATCH|/product/product_id/item/item_id|bearer token|name, size, price, isSold, menuid|상품 아이템 수정|
+|DELETE|/product/product_id/item/item_id|bearer token||상품 아이템 삭제|
+|POST|/product/product_id/tag|bearer token|name, type, menuid|상품 태그 등록|
+|PATCH|/product/product_id/tag/tag_id|bearer token|name, type, menuid|상품 태그 수정|
+|DELETE|/product/product_id/tag/tag_id|bearer token||상품 태그 삭제|
+
 
 ## API 명세(request/response)
 
