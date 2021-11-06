@@ -244,7 +244,7 @@ GET "http://127.0.0.1:8000/product HTTP/1.1"
 ### 2. 개별 상품 조회
 - Method : GET
 - EndpointURL : /product / product_id
-- Remark : 
+- Remark : product_id로 개별 상품 선택
 - Request
 ```
 GET "http://127.0.0.1:8000/product/1 HTTP/1.1"
@@ -299,7 +299,7 @@ GET "http://127.0.0.1:8000/product/1 HTTP/1.1"
 ### 3. 개별 상품 수정
 - Method : PATCH
 - EndpointURL : /product / product_id
-- Remark : 
+- Remark : product_id로 개별 상품 선택
 - Request
 ```
 PATCH "http://127.0.0.1:8000/product/1 HTTP/1.1"
