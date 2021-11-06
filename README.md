@@ -57,6 +57,245 @@
 |PATCH|/product/product_id||name|상품 수정|
 |DELETE|/product/product_id||| 상품 삭제 |
 
+## API 명세(request/response)
+
+### 1. 전체 상품 조회
+- Method : GET
+- EndpointURL : /product
+- Remark : 
+- Request
+```
+POST "http://127.0.0.1:8000/product HTTP/1.1"
+
+```
+- Response
+```
+{
+    "count": 11,
+    "next": 2,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "category": "salad",
+            "name": "깔깔마리 달래 샐러드",
+            "description": "해산물 샐러드",
+            "isSold": false,
+            "badge": "new",
+            "items": [
+                {
+                    "id": 1,
+                    "name": "스몰",
+                    "size": "S",
+                    "price": 7000,
+                    "isSold": false,
+                    "menuid": 1
+                },
+                {
+                    "id": 2,
+                    "name": "미디움",
+                    "size": "M",
+                    "price": 7500,
+                    "isSold": false,
+                    "menuid": 1
+                },
+                {
+                    "id": 3,
+                    "name": "라지",
+                    "size": "L",
+                    "price": 8000,
+                    "isSold": false,
+                    "menuid": 1
+                }
+            ],
+            "tags": [
+                {
+                    "id": 1,
+                    "name": "샐러드",
+                    "type": "샐러드",
+                    "menuid": 1
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "category": "salad",
+            "name": "연어 샐러드",
+            "description": "샐러드",
+            "isSold": false,
+            "badge": "new",
+            "items": [
+                {
+                    "id": 4,
+                    "name": "스몰",
+                    "size": "S",
+                    "price": 10000,
+                    "isSold": false,
+                    "menuid": 2
+                },
+                {
+                    "id": 5,
+                    "name": "미디움",
+                    "size": "M",
+                    "price": 11000,
+                    "isSold": false,
+                    "menuid": 2
+                }
+            ],
+            "tags": [
+                {
+                    "id": 2,
+                    "name": "샐러드",
+                    "type": "샐러드",
+                    "menuid": 2
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "category": "salad",
+            "name": "차돌박이 샐러드",
+            "description": "샐러드",
+            "isSold": false,
+            "badge": "old",
+            "items": [
+                {
+                    "id": 6,
+                    "name": "미디움",
+                    "size": "M",
+                    "price": 12000,
+                    "isSold": false,
+                    "menuid": 3
+                },
+                {
+                    "id": 7,
+                    "name": "라지",
+                    "size": "L",
+                    "price": 13000,
+                    "isSold": false,
+                    "menuid": 3
+                }
+            ],
+            "tags": [
+                {
+                    "id": 3,
+                    "name": "샐러드",
+                    "type": "샐러드",
+                    "menuid": 3
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "category": "salad",
+            "name": "닭가슴살 샐러드",
+            "description": "샐러드",
+            "isSold": false,
+            "badge": "old",
+            "items": [
+                {
+                    "id": 8,
+                    "name": "미디움",
+                    "size": "M",
+                    "price": 8000,
+                    "isSold": true,
+                    "menuid": 4
+                }
+            ],
+            "tags": [
+                {
+                    "id": 4,
+                    "name": "샐러드",
+                    "type": "샐러드",
+                    "menuid": 4
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "category": "milk",
+            "name": "우유",
+            "description": "우유",
+            "isSold": false,
+            "badge": "new",
+            "items": [
+                {
+                    "id": 9,
+                    "name": "라지",
+                    "size": "L",
+                    "price": 7000,
+                    "isSold": true,
+                    "menuid": 5
+                }
+            ],
+            "tags": [
+                {
+                    "id": 5,
+                    "name": "우유",
+                    "type": "우유",
+                    "menuid": 5
+                }
+            ]
+        }
+    ]
+}
+```
+
+### 2. 개별 상품 조회
+- Method : GET
+- EndpointURL : /product / product_id
+- Remark : 
+- Request
+```
+POST "http://127.0.0.1:8000/product/1 HTTP/1.1"
+
+```
+- Response
+```
+{
+    "id": 1,
+    "category": "salad",
+    "name": "깔깔마리 달래 샐러드",
+    "description": "해산물 샐러드",
+    "isSold": false,
+    "badge": "new",
+    "items": [
+        {
+            "id": 1,
+            "name": "스몰",
+            "size": "S",
+            "price": 7000,
+            "isSold": false,
+            "menuid": 1
+        },
+        {
+            "id": 2,
+            "name": "미디움",
+            "size": "M",
+            "price": 7500,
+            "isSold": false,
+            "menuid": 1
+        },
+        {
+            "id": 3,
+            "name": "라지",
+            "size": "L",
+            "price": 8000,
+            "isSold": false,
+            "menuid": 1
+        }
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "샐러드",
+            "type": "샐러드",
+            "menuid": 1
+        }
+    ]
+}
+```
+
 
 
 ## 폴더 구조
