@@ -52,13 +52,13 @@
 
 | Method | endpoint | Request Header | Request Body | Remark |
 |:------:|-------------|-----|------|--------|
-|POST|/user||      |회원가입|
-|POST|/api/token/||  |로그인|
-|POST|/product||   |상품 등록|
-|GET|/product||    |전체 상품 조회|
-|GET|/product/product_id||    |개별 상품 조회|
-|PATCH|/product/product_id||name|상품 수정|
-|DELETE|/product/product_id||| 상품 삭제 |
+|POST|/user||email, password, role|회원가입|
+|POST|/api/token/||email, password|로그인|
+|POST|/product|bearer token|category, name, description, isSold, badge|상품 등록|
+|GET|/product|bearer token|    |전체 상품 조회|
+|GET|/product/product_id|bearer token|    |개별 상품 조회|
+|PATCH|/product/product_id|bearer token|category, name, description, isSold, badge|상품 수정|
+|DELETE|/product/product_id|bearer token|| 상품 삭제 |
 
 ## API 명세(request/response)
 
