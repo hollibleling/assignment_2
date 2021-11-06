@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+    nginx:
+        image: nginx:latest
+        restart: always
+        volumes:
+            - ./nginx:/etc/nginx/conf.d
+        ports:
+            - 80:80
+        depends_on:
+            - backend
+
+    backend:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - .:/root
+        ports:
+            - 8000:8000
+        command: bash -c "
+                 python /root/manage.py migrate &&
+                 cd /root &&
+                 gunicorn -b 0.0.0.0:8000 fresh_code.wsgi:application"
